@@ -31,6 +31,6 @@ def DOCKER_HUB_ACCOUNT = 'schliflo1'
     }
     stage("Push")
     echo 'Pushing Docker Image'
-    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
+    docker.withRegistry('http://localhost:5000', 'docker-asdfhub') {
         app.push()
     }

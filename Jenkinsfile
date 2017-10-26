@@ -29,3 +29,8 @@ def DOCKER_HUB_ACCOUNT = 'schliflo1'
             sh './test.sh'
         }
     }
+    stage("Push")
+    echo 'Pushing Docker Image'
+    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub') {
+        app.push()
+    }
